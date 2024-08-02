@@ -6,7 +6,7 @@ Este repositorio contiene una colección de proyectos realizados con HTML, CSS y
 
 ### 1. Landing Page con Modal Animado
 
-- **Descripción**: Una página de aterrizaje moderna que incluye un modal animado. Este modal puede ser utilizado para mostrar información adicional, formularios de contacto, suscripciones, etc.
+- **Descripción**: Una página de diseño moderno que incluye un modal animado. Este modal puede ser utilizado para mostrar información adicional, formularios de contacto, suscripciones, etc.
 - **Tecnologías**: HTML, CSS, JavaScript.
 - **Características**:
   - Diseño atractivo y moderno.
