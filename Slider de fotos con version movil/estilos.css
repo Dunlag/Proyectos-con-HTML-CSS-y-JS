@@ -1,0 +1,139 @@
+/* Importa las fuentes desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Establece márgenes y rellenos a 0 y usa el modelo de caja de border-box para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establece la fuente principal del cuerpo del documento */
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Define una clase contenedora con un ancho del 90% y alineación centrada */
+.container {
+  width: 90%;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Estilos para la sección del slider */
+.slider {
+  background-color: #f2f2f2;
+  padding: 40px 0;
+}
+
+/* Define el contenedor del slider como una cuadrícula */
+.slider__container {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 1em;
+}
+
+/* Estilos para cada cuerpo del slider */
+.slider__body {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  opacity: 0;
+  pointer-events: none;
+  display: grid;
+  background-color: #f2f2f2;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  transition: opacity 1.5s;
+}
+
+/* Estilos para el cuerpo del slider visible */
+.slider__body--show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+/* Contenedor de texto dentro del slider */
+.slider__texts {
+  max-width: 600px;
+}
+
+/* Estilos para el subtítulo */
+.subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la revisión del slider */
+.slider__review {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* Estilos para las imágenes del slider */
+.slider__img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilos para las flechas del slider */
+.slider__arrow {
+  cursor: pointer;
+  width: 90%;
+}
+
+/* Estilos específicos para la segunda flecha del slider */
+.slider__arrow:nth-of-type(2) {
+  justify-self: end;
+}
+
+/* Media query para pantallas con ancho máximo de 768px */
+@media (max-width: 768px) {
+  .slider__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1em;
+  }
+
+  .slider__picture {
+    grid-row: 1/2;
+  }
+
+  .slider__img {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+/* Media query para pantallas con ancho máximo de 425px */
+@media (max-width: 425px) {
+  .slider__container {
+    grid-template-columns: 25px 1fr 25px;
+  }
+
+  .slider__arrow {
+    width: 100%;
+  }
+
+  .slider__img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .slider__review {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

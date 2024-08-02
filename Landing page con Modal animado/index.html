@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ajusta el viewport para dispositivos móviles -->
+    <title>Landing page con modal</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="estilos.css" /> <!-- Vincula el archivo de estilos CSS -->
+  </head>
+  <body>
+    <!-- Encabezado principal con un héroe -->
+    <header class="hero">
+      <!-- Barra de navegación -->
+      <nav class="nav container">
+        <h2 class="nav__logo">Fernando Pinilla</h2> <!-- Logo o nombre en la navegación -->
+
+        <!-- Lista de navegación -->
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Inicio</a></li> <!-- Enlace a Inicio -->
+          <li class="nav__item"><a href="#" class="nav__link">Acerca de</a></li> <!-- Enlace a Acerca de -->
+          <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li> <!-- Enlace a Contacto -->
+        </ul>
+
+        <!-- Menú de navegación para móviles -->
+        <figure class="nav__menu">
+          <img src="./assets/menu.svg" alt="" class="nav__icon" /> <!-- Icono del menú -->
+        </figure>
+      </nav>
+
+      <!-- Sección principal del héroe -->
+      <section class="hero__main container">
+        <!-- Texto principal del héroe -->
+        <div class="hero__text">
+          <h1 class="hero__title">Hello!, My name is Fernando</h1> <!-- Título del héroe -->
+          <p class="hero__subtitle">
+            Let my help you grow your business with CSS Grid <!-- Subtítulo del héroe -->
+          </p>
+          <a href="#" class="hero__cta">Join us</a> <!-- Llamada a la acción -->
+        </div>
+
+        <!-- Imagen principal del héroe -->
+        <figure class="hero__picture">
+          <img src="./assets/ilustration.svg" alt="" class="hero__img" /> <!-- Imagen del héroe -->
+        </figure>
+      </section>
+
+      <!-- Olas decorativas en el fondo del héroe -->
+      <div style="height: 150px; overflow: hidden" class="hero__waves">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%"
+        >
+          <path
+            d="M0.00,49.98 C253.10,219.58 310.66,-116.92 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+            style="stroke: none; fill: #fff"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Sección del modal -->
+    <section class="modal">
+      <div class="modal__container">
+        <img src="./assets/modal.svg" alt="modal" class="modal__img" /> <!-- Imagen del modal -->
+        <h2 class="modal__title">Glad you're here!</h2> <!-- Título del modal -->
+        <p class="modal__paragraph">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          aliquid consequatur tempora commodi quod doloremque, recusandae
+          distinctio dolor in? Minus possimus dolorum voluptates blanditiis
+          perferendis? <!-- Contenido del párrafo del modal -->
+        </p>
+        <a href="#" class="modal__close">Continue browsing</a> <!-- Enlace para cerrar el modal -->
+      </div>
+    </section>
+    
+    <!-- Archivo JavaScript principal -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

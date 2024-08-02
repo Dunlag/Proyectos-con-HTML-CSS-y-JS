@@ -1,0 +1,251 @@
+/* Importa la fuente Urbanist desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Establece la fuente por defecto para el cuerpo del documento */
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+/* Resetea márgenes, relleno y box-sizing para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establece un contenedor centralizado con un ancho máximo */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Estilo del héroe */
+.hero {
+  background-image: linear-gradient(
+    to top,
+    #1e3c72 0%,
+    #1e3c72 1%,
+    #2a5298 100%
+  ); /* Gradiente de fondo */
+  color: #fff; /* Color de texto */
+  display: grid; /* Utiliza grid para el layout */
+  grid-template-rows: max-content 1fr; /* Define las filas del grid */
+  grid-template-areas: 
+    "nav"
+    "content"; /* Áreas del grid */
+  min-height: 100vh; /* Altura mínima de la pantalla completa */
+}
+
+/* Estilo de la barra de navegación */
+.nav {
+  grid-area: nav; /* Ubicación en el grid */
+  display: grid; /* Utiliza grid para el layout */
+  justify-content: space-between; /* Espacio entre elementos */
+  grid-auto-flow: column; /* Disposición en columnas */
+  gap: 1em; /* Espacio entre elementos */
+  align-items: center; /* Alineación vertical */
+  height: 90px; /* Altura de la barra de navegación */
+}
+
+/* Lista de navegación */
+.nav__list {
+  list-style: none; /* Elimina los puntos de lista */
+  display: grid; /* Utiliza grid para el layout */
+  grid-auto-flow: column; /* Disposición en columnas */
+  gap: 1em; /* Espacio entre elementos */
+}
+
+/* Enlaces de navegación */
+.nav__link {
+  color: #fff; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Logo de navegación */
+.nav__logo {
+  font-size: 1.8rem; /* Tamaño de fuente */
+  font-weight: 300; /* Peso de la fuente */
+}
+
+/* Menú de navegación móvil (oculto por defecto) */
+.nav__menu {
+  display: none;
+}
+
+/* Icono del menú de navegación */
+.nav__icon {
+  width: 30px; /* Ancho del icono */
+}
+
+/* Estilo principal del héroe */
+.hero__main {
+  grid-area: content; /* Ubicación en el grid */
+  display: grid; /* Utiliza grid para el layout */
+  gap: 2em; /* Espacio entre elementos */
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  padding-bottom: 180px; /* Relleno inferior */
+  align-items: center; /* Alineación vertical */
+}
+
+/* Olas decorativas en el fondo del héroe */
+.hero__waves {
+  grid-area: content; /* Ubicación en el grid */
+  align-self: end; /* Alineación al final */
+}
+
+/* Título del héroe */
+.hero__title {
+  font-size: 2.6rem; /* Tamaño de fuente */
+  letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Subtítulo del héroe */
+.hero__subtitle {
+  margin-top: 1rem; /* Margen superior */
+  margin-bottom: 1.5rem; /* Margen inferior */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  font-weight: 300; /* Peso de la fuente */
+}
+
+/* Botón de llamada a la acción del héroe */
+.hero__cta {
+  text-decoration: none; /* Sin subrayado */
+  color: #fff; /* Color del texto */
+  padding: 15px 60px; /* Relleno interno */
+  border: 1px solid; /* Borde */
+  border-radius: 6px; /* Bordes redondeados */
+  display: inline-block; /* Elemento en línea con comportamiento de bloque */
+  font-weight: 500; /* Peso de la fuente */
+  transition: background-color .3s; /* Transición suave del color de fondo */
+}
+
+/* Efecto hover para el botón de llamada a la acción */
+.hero__cta:hover {
+  background-color: #fff; /* Color de fondo al pasar el ratón */
+  color: #1e3c72; /* Color del texto al pasar el ratón */
+}
+
+/* Imagen del héroe */
+.hero__img {
+  width: 100%; /* Ancho completo */
+}
+
+/* Estilo del modal */
+.modal {
+  position: fixed; /* Posición fija */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd; /* Color de fondo semitransparente */
+  display: flex; /* Utiliza flexbox para el layout */
+  opacity: 0; /* Comienza invisible */
+  pointer-events: none; /* No interactuable por defecto */
+  transition: opacity .6s .9s; /* Transición suave de opacidad */
+  --transform: translateY(-100vh); /* Transformación por defecto */
+  --transition: transform .8s; /* Transición suave de transformación */
+}
+
+/* Contenedor del modal */
+.modal__container {
+  margin: auto; /* Centrado automático */
+  width: 90%; /* Ancho del 90% */
+  max-width: 600px; /* Ancho máximo */
+  max-height: 90%; /* Altura máxima */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 3em 2.5em; /* Relleno interno */
+  background-color: #fff; /* Color de fondo */
+  display: grid; /* Utiliza grid para el layout */
+  gap: 1em; /* Espacio entre elementos */
+  place-items: center; /* Centrado de elementos */
+  grid-auto-columns: 100%; /* Columnas automáticas de ancho completo */
+  transform: var(--transform); /* Aplicación de la transformación */
+  transition: var(--transition); /* Aplicación de la transición */
+}
+
+/* Título del modal */
+.modal__title {
+  font-size: 2.5rem; /* Tamaño de fuente */
+}
+
+/* Párrafo del modal */
+.modal__paragraph {
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Imagen del modal */
+.modal__img {
+  width: 90%; /* Ancho del 90% */
+  max-width: 300px; /* Ancho máximo */
+}
+
+/* Botón de cierre del modal */
+.modal__close {
+  text-decoration: none; /* Sin subrayado */
+  color: #fff; /* Color del texto */
+  background-color: #F26250; /* Color de fondo */
+  padding: 1em 3em; /* Relleno interno */
+  border: 1px solid; /* Borde */
+  border-radius: 6px; /* Bordes redondeados */
+  display: inline-block; /* Elemento en línea con comportamiento de bloque */
+  font-weight: 300; /* Peso de la fuente */
+  transition: background-color .3s; /* Transición suave del color de fondo */
+}
+
+/* Efecto hover para el botón de cierre del modal */
+.modal__close:hover {
+  color: #F26250; /* Color del texto al pasar el ratón */
+  background-color: #fff; /* Color de fondo al pasar el ratón */
+}
+
+/* Clase para mostrar el modal */
+.modal--show {
+  opacity: 1; /* Totalmente visible */
+  pointer-events: unset; /* Habilita la interacción */
+  transition: opacity .6s; /* Transición suave de opacidad */
+  --transform: translateY(0); /* Sin transformación */
+  --transition: transform .8s .8s; /* Transición suave de transformación */
+}
+
+/* Estilos responsivos para pantallas de hasta 800px */
+@media (max-width: 800px) {
+  /* Oculta la lista de navegación en pantallas pequeñas */
+  .nav__list {
+    display: none;
+  }
+
+  /* Muestra el menú de navegación en pantallas pequeñas */
+  .nav__menu {
+    display: block;
+  }
+
+  /* Ajusta el layout del héroe en pantallas pequeñas */
+  .hero__main {
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: max-content max-content; /* Filas de contenido máximo */
+    text-align: center; /* Texto centrado */
+  }
+
+  /* Ajusta la imagen del héroe en pantallas pequeñas */
+  .hero__picture {
+    grid-row: 1/2; /* Primera fila */
+  }
+
+  .hero__img {
+    max-width: 500px; /* Ancho máximo */
+    display: block; /* Elemento de bloque */
+    margin: 0 auto; /* Centrado automático */
+  }
+
+  /* Ajusta el contenedor del modal en pantallas pequeñas */
+  .modal__container {
+    padding: 2em 1.5em; /* Relleno interno reducido */
+  }
+
+  /* Ajusta el título del modal en pantallas pequeñas */
+  .modal__title {
+    font-size: 2rem; /* Tamaño de fuente reducido */
+  }
+}

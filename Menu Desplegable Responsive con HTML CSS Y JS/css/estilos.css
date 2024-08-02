@@ -1,0 +1,182 @@
+/* Importa la fuente 'Poppins' de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Resetea el margen, padding y box-sizing para todos los elementos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define la fuente predeterminada para el cuerpo del documento */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para el menú */
+.menu{
+    background-color: #1A202C;
+    color: #fff;
+    height: 70px;
+}
+
+/* Contenedor principal del menú */
+.menu__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* Contenedor de los enlaces del menú */
+.menu__links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+}
+
+/* Elemento individual del menú */
+.menu__item{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0); /* Definición de una variable CSS para el recorte del submenú */
+    --transform: rotate(-90deg); /* Definición de una variable CSS para la rotación de la flecha del submenú */
+}
+
+/* Efecto hover para el elemento del menú */
+.menu__item:hover{
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+
+/* Enlace del menú */
+.menu__link{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+/* Efecto hover para el enlace del menú */
+.menu__link:hover{
+    background-color: #5e7094;
+}
+
+/* Flecha del submenú */
+.menu__arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+}
+
+/* Submenú anidado */
+.menu__nesting{
+    list-style: none;
+    transition: clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: #000;
+}
+
+/* Enlace dentro del submenú */
+.menu__link--inside{
+    padding: 30px 100px 30px 20px;
+}
+
+/* Efecto hover para el enlace dentro del submenú */
+.menu__link--inside:hover{
+    background-color: #798499;
+}
+
+/* Ícono del menú hamburguesa */
+.menu__hamburguer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none; /* Oculto por defecto, se muestra en pantallas pequeñas */
+}
+
+/* Imagen del ícono del menú hamburguesa */
+.menu__img{
+    display: block;
+    width: 36px;
+}
+
+/* Estilos para pantallas con un ancho máximo de 800px */
+@media (max-width:800px){
+    .menu__hamburguer{
+        display: flex; /* Muestra el ícono del menú hamburguesa */
+    }
+
+    .menu__item{
+        --clip:0; /* Elimina el recorte del submenú */
+        overflow: hidden;
+    }
+
+    .menu__item--active{
+        --transform: rotate(0); /* Rota la flecha del submenú */
+        --background: #5e7094; /* Cambia el color de fondo del elemento activo */
+    }
+
+    .menu__item--show{
+        background-color: var(--background); /* Aplica el color de fondo al mostrar el submenú */
+    }
+
+    .menu__links{
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        background-color: #000;
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+        transform: translateX(100%); /* Oculta el menú fuera de la vista */
+    }
+
+    .menu__links--show{
+        transform: unset; /* Muestra el menú al restablecer la transformación */
+        width: 100%;
+    }
+
+    .menu__link{
+        padding: 25px 0;
+        padding-left: 30px;
+        height: auto;
+    }
+
+    .menu__arrow{
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .menu__nesting{
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        transition: height .3s;
+    }
+
+    .menu__link--inside{
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #798499;
+    }
+}
