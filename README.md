@@ -37,12 +37,11 @@ Para ver y probar estos proyectos localmente, sigue estos pasos:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/proyectos-con-html-css-js.git
+   git clone https://github.com/tu-usuario/proyectos-con-html-css-js.git```
 Navega a la carpeta del proyecto:
 
-bash
-Copy code
-cd proyectos-con-html-css-js
+```bash
+cd proyectos-con-html-css-js ```
 Abre los archivos index.html de cada proyecto en tu navegador para verlos en acción.
 
 Contribuciones
