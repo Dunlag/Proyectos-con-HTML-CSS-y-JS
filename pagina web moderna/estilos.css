@@ -380,7 +380,135 @@ body,input,textarea,button{
     padding: 1.5rem;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
+
+/** Footer **/
+
+.footer{
+    background-color: var(--color-secundario)
+}
+
+.footer__content{
+    color: white;
+    padding: 80px 0;
+    width: min(90%, 1200px);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.footer__main{
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.footer__links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__link{
+    color: white;
+    text-decoration: none;
+}
+
+.footer__link:hover{
+    text-decoration: underline ;
+}
+
+.footer__contact{
+    max-width: 250px;
+    display: grid;
+    gap: 1.3rem;
+    text-align: center;
+}
+
+.footer__copy{
+    margin-top: 1rem;
+    justify-self: center;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.footer__newsletter{
+    width: min(100%, 400px);
+    padding: 2rem 1.5rem;
+    background-color: #292a32;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 48px 48px;
+}
+
+.footer__email{
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 0 1.5rem;
+    background-color: transparent;
+    color: white;
+}
+
+.footer__email::placeholder{
+    color: white;
+}
+
+.footer__submit{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.footer__social{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+.footer__social-links{
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__logo{
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    border-radius: 0; /* Asegura que la imagen no tenga bordes redondeados adicionales */
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.footer__copyright{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid white;
+}
+
+.footer_copyright-text{
+    text-align: center;
+}
+
+.footer__logo-link{
+    width: 100px;
+    height: auto;
+    display: inline-block; /* Esto es opcional */
+  border-radius: 50px; /* Radio del borde redondeado */
+  padding: 10px; /* Espacio entre la imagen y el borde */
+  background-color: #f0f0f0; /* Color de fondo opcional para ver el padding */
+  overflow: hidden; /* Asegura que el borde redondeado se aplique a la imagen */
+}
+
+
 
 @media(width >= 768px){
     /** hero **/
@@ -459,5 +587,68 @@ body,input,textarea,button{
         grid-auto-flow: column;
         place-content: unset;
         gap: 1rem;
+    }
+
+    /** footer**/
+
+    .footer{
+        background-color: white;
+    }
+
+    .footer__content{
+        background-color: var(--color-secundario);
+        border-radius: 30px 30px 0 0;
+    }
+
+    .footer__main{
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr 55% 1fr;
+        grid-template-areas:
+        "logo links media"
+        "contact news news";
+        justify-items: start;
+    }
+
+    .footer__links{
+        grid-area: links;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer__contact{
+        grid-area: contact;
+
+        text-align: left;
+        max-width: 300px;
+    }
+
+    .footer__newsletter{
+        grid-area: news;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .footer__social{
+        grid-area: media;
+        justify-self: end;
+    }
+
+    .footer__logo-link{
+        grid-area: logo;
+    }
+
+
+    .footer__copy{
+        justify-self: start;
+        margin-top: 0rem;
+    }
+
+    .footer__copyright{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
