@@ -1,6 +1,6 @@
 # Proyectos con HTML, CSS y JS
 
-Este repositorio contiene una colección de proyectos realizados con HTML, CSS y JavaScript. Actualmente, incluye tres proyectos, con la intención de agregar más en el futuro.
+Este repositorio contiene una colección de proyectos realizados con HTML, CSS y JavaScript. Actualmente, incluye cuatro proyectos, con la intención de agregar más en el futuro.
 
 ## Proyectos
 
@@ -31,21 +31,33 @@ Este repositorio contiene una colección de proyectos realizados con HTML, CSS y
   - Navegación mediante deslizamiento táctil.
   - Animaciones suaves para una mejor experiencia de usuario.
 
+### 4. Landing Page con Diseño Moderno
+
+- **Descripción**: Una segunda landing page, similar a la primera, pero con variaciones en el diseño y estructura. Esta página es ideal para mostrar productos, servicios o cualquier otro tipo de contenido que necesite un diseño moderno y atractivo.
+- **Tecnologías**: HTML, CSS, JavaScript.
+- **Características**:
+  - Diseño limpio y moderno.
+  - Efectos de desplazamiento y animaciones CSS.
+  - Optimizada para dispositivos móviles con diseño responsivo.
+
 ## Instalación
 
 Para ver y probar estos proyectos localmente, sigue estos pasos:
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/proyectos-con-html-css-js.git```
-Navega a la carpeta del proyecto:
+   git clone https://github.com/tu-usuario/proyectos-con-html-css-js.git
+   ```
+2. Navega a la carpeta del proyecto:
+   ```bash
+   cd proyectos-con-html-css-js
+   ```
+3. Abre los archivos `index.html` de cada proyecto en tu navegador para verlos en acción.
 
-```bash
-cd proyectos-con-html-css-js ```
-Abre los archivos index.html de cada proyecto en tu navegador para verlos en acción.
+## Contribuciones
 
-Contribuciones
 ¡Las contribuciones son bienvenidas! Si tienes alguna idea para un nuevo proyecto o mejoras a los proyectos existentes, no dudes en abrir un issue o enviar un pull request.
 
-Licencia
+## Licencia
+
 Este repositorio está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
