@@ -31,13 +31,14 @@ Este repositorio contiene una colección de proyectos realizados con HTML, CSS y
   - Navegación mediante deslizamiento táctil.
   - Animaciones suaves para una mejor experiencia de usuario.
 
-### 4. Landing Page con Diseño Moderno
+### 4. Landing Page con Diseño Moderno (Frontend Mentor)
 
-- **Descripción**: Una segunda landing page, similar a la primera, pero con variaciones en el diseño y estructura. Esta página es ideal para mostrar productos, servicios o cualquier otro tipo de contenido que necesite un diseño moderno y atractivo.
+- **Descripción**: Este proyecto es una landing page moderna, basada en un desafío de [Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor es una plataforma diseñada para que los desarrolladores front-end puedan practicar y mejorar sus habilidades de manera práctica y realista. Esta landing page incluye un diseño responsivo y una navegación desplegable.
 - **Tecnologías**: HTML, CSS, JavaScript.
 - **Características**:
   - Diseño limpio y moderno.
   - Efectos de desplazamiento y animaciones CSS.
+  - Navegación desplegable.
   - Optimizada para dispositivos móviles con diseño responsivo.
 
 ## Instalación
