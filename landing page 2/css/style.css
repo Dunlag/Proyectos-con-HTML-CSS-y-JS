@@ -1,135 +1,337 @@
+/* Definición de variables CSS para colores */
 :root{
-    --almost-white: hsl(0, 0%, 98%);
-    --medium-gray: hsl(0, 0%, 41%);
-    --almost-black: hsl(0, 0%, 8%);
+    --almost-white: hsl(0, 0%, 98%); /* Color blanco casi puro */
+    --medium-gray: hsl(0, 0%, 41%);  /* Color gris medio */
+    --almost-black: hsl(0, 0%, 8%);  /* Color negro casi puro */
 }
 
+/* Aplicación general de estilos */
 *{
-    margin: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina el margen por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
 }
 
+/* Estilo básico del body */
 body{
-    font-family: 'Epilogue', sans-serif;
+    font-family: 'Epilogue', sans-serif; /* Fuente personalizada para todo el documento */
 }
 
+/* Contenedor principal que centra el contenido y controla el ancho máximo */
 .container{
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    max-width: 1200px;
+    width: 90%; /* Ocupa el 90% del ancho del viewport */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    max-width: 1200px; /* Limita el ancho máximo a 1200px */
 }
 
+/* Estilo de la barra de navegación */
 .nav{
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 70px; /* Fija la altura de la barra de navegación */
+    display: flex; /* Usa flexbox para organizar elementos hijos */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    justify-content: space-between; /* Espacia los elementos al máximo posible */
 }
 
-.nav__hamburger{
-    width: 30px;
-    height: 50%;
-    background-image: url("../images/icon-menu.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-
-    z-index: 100;
-    transition: background-image .3s;
+/* Estilos del ícono de hamburguesa para menú móvil */
+.nav__hamburguer{
+    width: 30px; /* Ancho del ícono de hamburguesa */
+    height: 50%; /* Altura del ícono, 50% de la altura de .nav */
+    background-image: url("../images/icon-menu.svg"); /* Imagen del ícono */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    cursor: pointer; /* Cambia el cursor al estilo de mano al pasar sobre el ícono */
+    z-index: 100; /* Asegura que el ícono esté sobre otros elementos */
+    transition: background-image .3s; /* Suaviza el cambio de la imagen de fondo */
 }
 
-.nav__hamburger--open{
-    background-image: url("../images/icon-close-menu.svg");
+/* Modifica la imagen de fondo cuando el menú está abierto */
+.nav__hamburguer--open{
+    background-image: url("../images/icon-close-menu.svg"); /* Cambia al ícono de cierre */
 }
 
-
+/* Estilo para el overlay que aparece detrás del menú móvil */
 .nav__overlay{
-    background-color: #000000a2;
-    position: fixed;
-    inset: 0;
-
-    opacity: 0;
-    pointer-events: none;
-    transition: .3s opacity;
+    background-color: #000000a2; /* Color de fondo negro con transparencia */
+    position: fixed; /* Fija el overlay para que ocupe toda la pantalla */
+    inset: 0; /* Ajusta los bordes del overlay a los bordes de la pantalla */
+    opacity: 0; /* Inicialmente oculto */
+    pointer-events: none; /* Deshabilita la interacción con el overlay */
+    transition: .3s opacity; /* Suaviza la transición de opacidad */
 }
 
+/* Clase que se activa para mostrar el overlay */
 .nav__overlay--show{
-    opacity: 1;
-    pointer-events: unset;
+    opacity: 1; /* Hace visible el overlay */
+    pointer-events: unset; /* Permite la interacción con el overlay */
 }
 
+/* Estilos del menú de navegación desplegable */
 .nav__menu{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: #fff;
-    width: 65%;
-    max-width: 400px;
-    padding: 0;
-    list-style: none;
-    overflow: auto;
-    padding: 70px 0;
+    position: absolute; /* Posiciona el menú de forma absoluta en relación con su contenedor */
+    top: 0; /* Alinea el menú en la parte superior */
+    bottom: 0; /* Extiende el menú hasta el fondo */
+    right: 0; /* Alinea el menú al lado derecho */
+    background-color: #fff; /* Fondo blanco para el menú */
+    width: 65%; /* Ocupa el 65% del ancho de la pantalla */
+    max-width: 400px; /* Ancho máximo de 400px */
+    padding: 70px 0; /* Espaciado interno superior e inferior de 70px */
+    list-style: none; /* Elimina el estilo por defecto de la lista */
+    overflow: auto; /* Permite el scroll si el contenido es demasiado largo */
 }
 
+/* Estilos de cada ítem del menú */
 .nav__item{
-    width: 80%;
-    /*background-color: #000;*/
-    margin: 0 auto;
-    color: var(--almost-black);
-    cursor: pointer;
-    padding: 20px 0;
+    width: 80%; /* Ancho del 80% del contenedor padre */
+    margin: 0 auto; /* Centra horizontalmente cada ítem del menú */
+    color: var(--almost-black); /* Color del texto */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el ítem */
+    padding: 20px 0; /* Espaciado interno superior e inferior de 20px */
+    --transform: rotate(-90deg); /* Rotación inicial de la flecha (CSS custom property) */
 }
 
+/* Efecto hover para los ítems del menú */
+.nav__item:hover{
+    --transform: rotate(0); /* Rota la flecha a su posición normal al hacer hover */
+}
+
+/* Estilo de la flecha que indica la presencia de un submenú */
+.nav__arrow{
+    transform: var(--transform); /* Aplica la rotación definida en la custom property */
+    transition: transform .3s; /* Suaviza la rotación de la flecha */
+}
+
+/* Ajuste de padding para ítems que contienen submenús */
 .nav__item:has(.nav__parent){
-    padding: 0;
-    /*background-color: black;*/
+    padding: 0; /* Elimina el padding adicional para estos ítems */
 }
 
+/* Estilos del submenú (menu secundario) */
 .nav__inner{
-    list-style: none;
-    padding: 0;
-    width: 80%;
-    margin: 0 auto;
-
-    display: grid;
-    gap: 1.5em;
-    overflow: hidden;
-
-    height: 0;
-    transition: height .4s;
+    list-style: none; /* Elimina el estilo de lista predeterminado */
+    padding: 0; /* Elimina el espaciado interno */
+    width: 80%; /* Establece el ancho al 80% del contenedor padre */
+    margin: 0 auto; /* Centra horizontalmente el submenú */
+    display: grid; /* Usa grid layout para organizar los elementos */
+    gap: 1.5em; /* Espacio entre elementos del submenú */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    height: 0; /* Altura inicial del submenú, oculto */
+    transition: height .4s; /* Suaviza la transición de altura al abrir/cerrar */
 }
 
+/* Estilo del contenedor principal que tiene un submenú */
 .nav__parent{
-    display: grid;
-    align-items: center;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 1.3rem;
-    padding: 20px 0;
+    display: grid; /* Utiliza grid layout para alinear los elementos */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    grid-auto-flow: column; /* Distribuye los elementos en una fila */
+    grid-auto-columns: max-content; /* Ajusta automáticamente las columnas al contenido */
+    gap: 1.3em; /* Espacio entre los elementos del grid */
+    padding: 20px 0; /* Espaciado interno superior e inferior de 20px */
 }
 
+/* Estilo para los enlaces del menú */
 .nav__link{
-    text-decoration: none;
-    color: var(--almost-black);
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: var(--almost-black); /* Color del texto del enlace */
 }
 
+/* Estilo de la sección de login */
 .nav__login{
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
+    width: 90%; /* Establece el ancho al 90% del contenedor padre */
+    margin: 0 auto; /* Centra horizontalmente la sección de login */
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
+/* Estilo del borde alrededor de la sección de login */
 .nav__login--border{
-    border-radius: 1em;
-    margin-top: 20px;
-    border: 1px solid var(--medium-gray);
+    border-radius: 1em; /* Bordes redondeados */
+    margin-top: 20px; /* Margen superior de 20px */
+    border: 1px solid var(--medium-gray); /* Borde gris medio */
 }
 
-.nav__sing{
-    display: block;
-    color: var(--medium-gray);
-    padding: .7em 0;
-    text-decoration: none;
+/* Estilo para el enlace de registro (sign-in) */
+.nav__sign{
+    display: inline-block; /* Permite aplicar padding y margin como a un bloque */
+    color: var(--medium-gray); /* Color de texto gris medio */
+    padding: .7em 0; /* Espaciado interno superior e inferior de 0.7em */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+/* Estilos del contenedor principal */
+.main__grid{
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    display: grid; /* Utiliza grid layout para organizar los elementos */
+    grid-template-columns: 5% 1fr 5%; /* Define una grilla con 3 columnas */
+    grid-template-areas:
+    "img img img"  /* La primera fila ocupa todas las columnas con la imagen */
+    ".   text . "; /* La segunda fila tiene el texto centrado en la columna del medio */
+}
+
+/* Estilo del artículo principal */
+.main__article{
+    padding: 56px 0; /* Espaciado interno superior e inferior de 56px */
+    text-align: center; /* Centra el texto horizontalmente */
+    grid-area: text; /* Coloca el artículo en la zona de texto definida por la grilla */
+}
+
+/* Estilo del título principal */
+.main__title{
+    font-size: 2rem; /* Tamaño de fuente grande para el título */
+}
+
+/* Estilo del párrafo principal */
+.main__paragraph{
+    line-height: 1.5; /* Define la altura de línea para una mejor legibilidad */
+    margin: 1.5em 0; /* Margen superior e inferior de 1.5em */
+}
+
+/* Estilo del botón de llamada a la acción (CTA) */
+.main__cta{
+    background-color: var(--almost-black); /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    display: inline-block; /* Permite aplicar padding y margin como a un bloque */
+    padding: .8em 1.5em; /* Espaciado interno de 0.8em arriba/abajo y 1.5em a los lados */
+    border-radius: 10px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-weight: 700; /* Fuente en negrita */
+}
+
+/* Estilo de la imagen principal */
+.main__picture{
+    grid-area: img; /* Coloca la imagen en la zona de imagen definida por la grilla */
+    max-width: 400px; /* Ancho máximo de la imagen de 400px */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/* Estilo para que la imagen ocupe todo el ancho disponible */
+.main__img{
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+}
+
+/* Estilo de la sección de marcas */
+.main__brands{
+    display: grid; /* Utiliza grid layout para organizar las marcas */
+    gap: 1em; /* Espacio entre los elementos de la grilla */
+    grid-auto-flow: column; /* Coloca los elementos en una fila horizontal */
+    grid-auto-columns: minmax(30px, 100px); /* Ancho mínimo de 30px y máximo de 100px */
+    align-items: center; /* Alinea verticalmente las marcas en el centro */
+    justify-content: space-between; /* Distribuye las marcas uniformemente */
+    margin: 40px 0 80px; /* Margen superior de 40px y margen inferior de 80px */
+}
+
+/* Estilo de cada logo de marca */
+.main__brand{
+    width: 100%; /* La marca ocupa todo el ancho disponible en su contenedor */
+}
+
+/* Media Query: Estilos específicos para pantallas de ancho mayor a 768px */
+@media (min-width:768px) {
+    .nav{
+        gap: 2em; /* Espacio entre los elementos del menú */
+        overflow: visible; /* Permite que el contenido se desborde */
+        padding: 50px 0 0 ; /* Espaciado interno superior de 50px */
+    }
+
+    .nav__hamburguer{
+        display: none; /* Oculta el ícono de hamburguesa en pantallas grandes */
+    }
+
+    .nav__overlay{
+        position: unset; /* Elimina el posicionamiento fijo */
+        background-color: transparent; /* Fondo transparente */
+        opacity: 1; /* Totalmente visible */
+        pointer-events: unset; /* Permite la interacción */
+        flex: 1; /* El overlay ocupa todo el espacio disponible */
+    }
+
+    .nav__menu{
+        position: unset; /* Elimina el posicionamiento absoluto */
+        width: 100%; /* El menú ocupa todo el ancho disponible */
+        max-width: unset; /* Sin ancho máximo */
+        background-color: unset; /* Sin color de fondo */
+        padding: 0; /* Sin padding */
+        overflow: unset; /* Permite el desbordamiento */
+        display: flex; /* Flexbox para organizar los elementos */
+        align-items: center; /* Alinea verticalmente los elementos en el centro */
+        gap: 1em; /* Espacio entre los elementos del menú */
+    }
+
+    .nav__item{
+        width: max-content; /* El ancho del ítem se ajusta al contenido */
+        margin: 0; /* Sin margen */
+        padding: 0; /* Sin padding */
+        position: relative; /* Posicionamiento relativo para usar submenús */
+    }
+
+    .nav__inner{
+        position: absolute; /* Posiciona el submenú en relación al ítem padre */
+        left: 0; /* Alinea el submenú a la izquierda */
+        padding: 2em; /* Padding de 2em alrededor del submenú */
+        width: max-content; /* El ancho del submenú se ajusta al contenido */
+        height: auto; /* La altura se ajusta automáticamente */
+        background-color: #fff; /* Fondo blanco */
+        z-index: 100; /* Asegura que el submenú esté sobre otros elementos */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5); /* Sombra alrededor del submenú */
+        transition: opacity .3s; /* Suaviza la transición de opacidad */
+        opacity: 0; /* Inicialmente oculto */
+        pointer-events: none; /* Deshabilita la interacción */
+    }
+
+    .nav__inner--show{
+        opacity: 1; /* Hace visible el submenú */
+        pointer-events: unset; /* Permite la interacción */
+    }
+
+    .nav__login{
+        width: max-content; /* Ajusta el ancho al contenido */
+        margin: 0; /* Sin margen */
+        margin-left: auto; /* Alinea la sección de login a la derecha */
+    }
+
+    .nav__login--border{
+        margin: 0; /* Sin margen */
+        padding: 0 1.5em; /* Padding lateral de 1.5em */
+    }
+
+    .main__grid{
+        margin: 0 auto; /* Centra el grid horizontalmente */
+        max-width: 1200px; /* Ancho máximo de 1200px */
+        width: 90%; /* Ocupa el 90% del ancho disponible */
+        gap: 2em; /* Espacio entre los elementos del grid */
+        grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+        grid-template-areas: 
+        "text img"; /* El texto a la izquierda y la imagen a la derecha */
+        padding: 70px 0; /* Padding superior e inferior de 70px */
+    }
+
+    .main__picture{
+        max-height: 500px; /* Altura máxima de la imagen de 500px */
+    }
+
+    .main__img{
+        height: 100%; /* La imagen ocupa todo el alto disponible */
+    }
+
+    .main__article{
+        text-align: left; /* Alinea el texto a la izquierda */
+        padding: 0; /* Sin padding */
+        display: flex; /* Flexbox para organizar el contenido */
+        flex-direction: column; /* Los elementos dentro del artículo se organizan en columna */
+    }
+
+    .main__brands{
+        margin: auto 0 0 0; /* Espaciado superior automático, sin margen inferior */
+    }
+
+    .main__texts{
+        margin: auto 0; /* Espaciado automático superior e inferior */
+    }
+
+    .main__title{
+        font-size: 3.5rem; /* Tamaño de fuente más grande para pantallas grandes */
+    }
+
+    .main__paragraph{
+        margin: 2em 0; /* Margen superior e inferior de 2em */
+    }
 }

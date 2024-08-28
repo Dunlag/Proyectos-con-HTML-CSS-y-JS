@@ -1,126 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- Metadatos básicos del documento -->
+  <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para que sea adaptable -->
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- Título del documento -->
   <title>Landing Page</title>
+
+  <!-- Preconexión a las fuentes de Google para mejorar el rendimiento -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Importación de la fuente 'Epilogue' desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Enlace al archivo de estilos CSS -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
+  <!-- Barra de navegación principal -->
   <nav class="nav container">
-    <img src="./images/logo.svg" alt="snap" class="nav__img">
+    <!-- Logo del sitio -->
+    <img src="./images/logo.svg" class="nav__img" >
 
-    <div class="nav__hamburger"></div>
+    <!-- Ícono de hamburguesa para abrir el menú móvil -->
+    <div class="nav__hamburguer"></div>
 
-      <div class="nav__overlay">
-        <ul class="nav__menu">
+    <!-- Overlay que cubre la pantalla cuando el menú móvil está abierto -->
+    <div class="nav__overlay">
+      <!-- Menú de navegación -->
+      <ul class="nav__menu">
 
-          <li class="nav__item">
-            <span class="nav__parent">Features
-              <img src="./images/icon-arrow-down.svg" alt="flecha abajo" class="nav__arrow">
-            </span>
+        <!-- Primer ítem del menú con submenú desplegable -->
+        <li class="nav__item">
+          <span class="nav__parent">Features
+            <!-- Flecha que indica la presencia de un submenú -->
+            <img src="./images/icon-arrow-down.svg" class="nav__arrow">            
+          </span>
 
-            <ul class="nav__inner">
+          <!-- Submenú dentro de 'Features' -->
+          <ul class="nav__inner">
 
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">
-                  <img src="./images/icon-todo.svg" alt="todo" class="nav__illustration">
-                  Todo List
-                </a>
-              </li>
+            <!-- Opciones dentro del submenú 'Features' -->
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-todo.svg" class="nav__illustration">
+                Todo List
+              </a>
+            </li>
 
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">
-                  <img src="./images/icon-calendar.svg" alt="todo" class="nav__illustration">
-                  Calendar
-                </a>
-              </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-calendar.svg" class="nav__illustration">
+                Calendar
+              </a>
+            </li>
 
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">
-                  <img src="./images/icon-reminders.svg" alt="todo" class="nav__illustration">
-                  Reminder
-                </a>
-              </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-reminders.svg" class="nav__illustration">
+                Reminder
+              </a>
+            </li>
 
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">
-                  <img src="./images/icon-planning.svg" alt="todo" class="nav__illustration">
-                  Planning
-                </a>
-              </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <img src="./images/icon-planning.svg" class="nav__illustration">
+                Planning
+              </a>
+            </li>
+          </ul>
+        </li>
 
-            </ul>
+        <!-- Segundo ítem del menú con submenú desplegable -->
+        <li class="nav__item">
+          <span class="nav__parent">Company
+            <!-- Flecha que indica la presencia de un submenú -->
+            <img src="./images/icon-arrow-down.svg" class="nav__arrow">            
+          </span>
 
-          </li>
+          <!-- Submenú dentro de 'Company' -->
+          <ul class="nav__inner">
 
-          <li class="nav__item">
-            <span class="nav__parent">Company
-              <img src="./images/icon-arrow-down.svg" alt="flecha abajo" class="nav__arrow">
-            </span>
+            <!-- Opciones dentro del submenú 'Company' -->
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">History</a>
+            </li>
 
-            <ul class="nav__inner">
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">Our Team</a>
+            </li>
 
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">History</a>
-              </li>
+            <li class="nav__dropdown">
+              <a href="#" class="nav__link">Blog</a>
+            </li>
+          </ul>
+        </li>
 
-              
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">Our team</a>
-              </li>
+        <!-- Ítems del menú sin submenús -->
+        <li class="nav__item">
+          <a href="#" class="nav__link">Careers</a>
+        </li>
 
-              
-              <li class="nav__dropdown">
-                <a href="#" class="nav__link">Blog</a>
-              </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">About</a>
+        </li>
 
-            </ul>
+        <!-- Opciones de login y registro -->
+        <li class="nav__login">
+          <a href="#" class="nav__sign">Login</a>
+        </li>
 
-          </li>
+        <li class="nav__login nav__login--border">
+          <a href="#" class="nav__sign">Register</a>
+        </li>
 
-
-          <li class="nav__item">
-            <a href="#" class="nav__link">Careers</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link">About</a>
-          </li>
-
-          <li class="nav__login">
-            <a href="#" class="nav__sing">Login</a>
-          </li>
-
-          <li class="nav__login nav__login--border">
-            <a href="#" class="nav__sing">Register</a>
-          </li>
-
-        </ul>
-      </div>
+      </ul>
+    </div>
   </nav>
 
+  <!-- Contenido principal -->
+  <main class="main">
+    <section class="main__grid">
 
-  Features
-  Company
-  Careers
-  About
+      <!-- Imagen principal con soporte para dispositivos móviles y de escritorio -->
+      <picture class="main__picture">
+        <!-- Imagen para pantallas de escritorio -->
+        <source srcset="./images/image-hero-desktop.png" class="main__img" media="(min-width:768px)">
+        <!-- Imagen para pantallas móviles -->
+        <img src="./images/image-hero-mobile.png" class="main__img">
+      </picture>
 
-  Login
-  Register
+      <!-- Artículo principal -->
+      <article class="main__article">
 
-  Make remote work
+        <!-- Texto y botón de llamada a la acción -->
+        <div class="main__texts">
+          <h1 class="main__title">Make remote work</h1>
+          <p class="main__paragraph">Get your team in sync, no matter your location. Streamline processes, 
+            create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="main__cta">Learn more</a>
+        </div>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+        <!-- Logos de las marcas destacadas -->
+        <div class="main__brands">
+          <img src="./images/client-databiz.svg" class="main__brand">
+          <img src="./images/client-audiophile.svg" class="main__brand">
+          <img src="./images/client-meet.svg" class="main__brand">
+          <img src="./images/client-maker.svg" class="main__brand">
+        </div>
 
-  Learn more
-
-
+      </article>
+    </section>
+  </main>
+  
+  <!-- Script para manejar la interacción con el menú -->
   <script src="./js/menu.js"></script>
 </body>
 </html>
