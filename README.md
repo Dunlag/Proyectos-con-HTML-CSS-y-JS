@@ -41,6 +41,16 @@ Este repositorio contiene una colección de proyectos realizados con HTML, CSS y
   - Navegación desplegable.
   - Optimizada para dispositivos móviles con diseño responsivo.
 
+### 5. Dark Mode con Switch y Animación
+
+- **Descripción**: Un proyecto que implementa un modo oscuro (Dark Mode) en una página web, permitiendo a los usuarios alternar entre el modo claro y oscuro mediante un interruptor (switch). Además, incluye una animación suave durante el cambio de modos para mejorar la experiencia del usuario.
+- **Tecnologías**: HTML, CSS, JavaScript.
+- **Características**:
+  - Switch para alternar entre modo claro y oscuro.
+  - Animaciones suaves durante la transición de un modo a otro.
+  - Compatible con diferentes navegadores y dispositivos.
+  - Fácil de integrar en cualquier proyecto web existente.
+
 ## Instalación
 
 Para ver y probar estos proyectos localmente, sigue estos pasos:
